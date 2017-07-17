@@ -17,7 +17,7 @@ def portScan(tgtHost, tgtPorts):
         print("无法解析的主机名" % tgtHost)
         return
     print('\n扫描的主机IP是: ' + tgtIP)
-    socket.setdefaulttimeout(1)
+    socket.setdefaulttimeout(0.5)
     for tgtPort in tgtPorts:
         print('正在扫描的端口：' + str(tgtPort))
         connScan(tgtHost, int(tgtPort))
