@@ -1,5 +1,5 @@
-!/usr/bin/python
-#coding=utf-8
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 import socket
 def connScan(tgtHost, tgtPort):
     try:
