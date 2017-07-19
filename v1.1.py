@@ -28,20 +28,20 @@ def portScan(tgtHost, tgtPorts, speed):
 
 
 def main():
-    name = raw_input("请输入要检测的目标主机:")
-    chose1 = input("是否扫描默认端口?是请输入1，需要自定义端口请输入2，自定义扫描范围请输入3:")
+    name = raw_input("请输入要扫描的目标主机:")
+    chose1 = input("是否扫描默认端口?是请输入1，需要自定义端口请输入2，自定义扫描某范围内所有端口请输入3:")
     chose2 = input("是否需要自定义扫描速率（默认为0.5秒/次）？不需要请输入1，需要输入2：")
     if (chose2 == 2):
         speed = input("请输入扫描速率（秒/次）：")
     else:
         speed = 0.5
     if (chose1 == 2):
-        c = input("请输入需要扫描的端口，用[]括起来：")
+        c = input("请输入需要扫描的端口，并用[]括起来：")
         print("正在扫描自定义端口...")
         portScan(name, c, speed)
     elif (chose1 == 3):
-        d = input("请输入范围说明起始端口：")
-        e = input("请输入范围说明结束端口：")
+        d = input("请输入范围扫描起始端口：")
+        e = input("请输入范围扫描结束端口：")
         f = []
         for i in range(d, e + 1):
             f.append(i)
