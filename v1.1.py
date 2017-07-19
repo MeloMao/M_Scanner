@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
+
 import socket
+
 def connScan(tgtHost, tgtPort):
     try:
         connSkt = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -20,16 +22,16 @@ def portScan(tgtHost, tgtPorts):
     socket.setdefaulttimeout(0.5)
     for tgtPort in tgtPorts:
         print('正在扫描的端口：' + str(tgtPort))
-        connScan(tgtHost, int(tgtPort))
+        connScan(tgtHost,int(tgtPort))
 
 def main():
-    a=raw_input("请输入要检测的目标主机:")
-    b=input("是否扫描默认端口?是请输入1，需要自定义端口请输入2，自定义扫描范围请输入3:")
-    if(b==2):
-        c=input("请输入需要扫描的端口，用[]括起来：")
+    a = raw_input("请输入要检测的目标主机:")
+    b = input("是否扫描默认端口?是请输入1，需要自定义端口请输入2，自定义扫描范围请输入3:")
+    if(b == 2):
+        c = input("请输入需要扫描的端口，用[]括起来：")
         print("正在扫描自定义端口...")
         portScan(a,c)
-    elif(b==3):
+    elif(b == 3):
         d = input("请输入范围说明起始端口：")
         e = input("请输入范围说明结束端口：")
         f=[]
